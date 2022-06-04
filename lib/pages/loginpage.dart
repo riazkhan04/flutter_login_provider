@@ -15,8 +15,8 @@ class LoginPage extends StatelessWidget {
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 colors: [
-                  Colors.green[900]!,
                   Colors.green[800]!,
+                  Colors.green[600]!,
                   Colors.green[400]!
                 ]
             )
@@ -25,16 +25,24 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
+                // Container(
+                //     alignment: Alignment.center,
+                //     padding: const EdgeInsets.all(10),
+                //     child: const Text(
+                //       'Nandankanan App',
+                //       style: TextStyle(
+                //           color: Colors.white,
+                //           fontWeight: FontWeight.bold,
+                //           fontSize: 25),
+                //     )),
                 Container(
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.all(10),
-                    child: const Text(
-                      'Nandankanan App',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                    )),
+                  child: Image.asset(
+                    'images/logo.png',
+                    // width: MediaQuery.of(context).size.width,
+                    width: 180,
+                    height:100,
+                    fit: BoxFit.cover,
+                  )),
                 Container(
                     alignment: Alignment.center,
                     padding: const EdgeInsets.all(10),
@@ -76,8 +84,19 @@ class LoginPage extends StatelessWidget {
                 Container(
                     height: 50,
                     padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    color: Colors.black,
                     child: ElevatedButton(
-                      child: const Text('Login'),
+                      child: const Text('Login',
+                        style: TextStyle(
+                          fontSize: 20,
+                            color: Colors.black,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          textStyle: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold)),
                       onPressed: () {
                         username=nameController.text;
                         password=passwordController.text;

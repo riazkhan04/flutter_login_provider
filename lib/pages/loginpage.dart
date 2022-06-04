@@ -10,7 +10,17 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                colors: [
+                  Colors.green[900]!,
+                  Colors.green[800]!,
+                  Colors.green[400]!
+                ]
+            )
+        ),
         child: Padding(
             padding: const EdgeInsets.all(10),
             child: ListView(
@@ -21,8 +31,8 @@ class LoginPage extends StatelessWidget {
                     child: const Text(
                       'Nandankanan App',
                       style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                           fontSize: 25),
                     )),
                 Container(
@@ -30,7 +40,8 @@ class LoginPage extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     child: const Text(
                       'Sign in',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 20,
+                          color : Colors.white),
                     )),
                 Container(
                   padding: const EdgeInsets.all(10),
@@ -54,11 +65,14 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    //forgot password screen
-                  },
-                  child: const Text('Forgot Password',),
-                ),
+                    onPressed: () {
+                      //forgot password screen
+                    },
+                    child: const Text(
+                      'Forgot Password',
+                      style: TextStyle(fontSize: 15,
+                          color : Colors.white),
+                    )),
                 Container(
                     height: 50,
                     padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -81,11 +95,16 @@ class LoginPage extends StatelessWidget {
                 ),
                 Row(
                   children: <Widget>[
-                    const Text('Does not have account?'),
+                    const Text('Does not have account?',
+                      style:TextStyle(
+                          color: Colors.white70
+                      ) ,
+                    ),
                     TextButton(
                       child: const Text(
                         'Sign up',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 18,
+                            color: Colors.white),
                       ),
                       onPressed: () {
                         //signup screen
@@ -96,7 +115,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             )
-            ),
+        ),
       ),
     );
   }

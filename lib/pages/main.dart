@@ -1,8 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:nandankananappflutter/pages/loginpage.dart';
 import 'package:provider/provider.dart';
+import 'counter.dart';
 
 void main() {
   runApp(MyApp());
@@ -74,14 +74,3 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class CounterViewModel extends ChangeNotifier {
-
-  int _counter = 0;
-
-  int get counter => _counter;
-
-  void incrementCounter() {
-    _counter++;
-    notifyListeners();
-  }
-}

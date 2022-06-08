@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nandankananappflutter/pages/dashboard.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController nameController = TextEditingController();
@@ -15,9 +16,9 @@ class LoginPage extends StatelessWidget {
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 colors: [
-                  Colors.green[800]!,
                   Colors.green[600]!,
-                  Colors.green[400]!
+                  Colors.green[400]!,
+                  Colors.green[200]!
                 ]
             )
         ),
@@ -92,11 +93,23 @@ class LoginPage extends StatelessWidget {
                             color: Colors.black,
                         ),
                       ),
+                      // style: ButtonStyle(
+                      //     overlayColor: MaterialStateProperty.all<Color>(Colors.black12)),
                       style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          textStyle: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold)),
+                        onPrimary: Colors.black,
+                        animationDuration: Duration(milliseconds: 1000),
+                        primary: Colors.white,
+                        shadowColor: Colors.white,
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      // ElevatedButton.styleFrom(
+                      //     primary: Colors.white,
+                      //     textStyle: TextStyle(
+                      //         fontSize: 30,
+                      //         fontWeight: FontWeight.bold)),
                       onPressed: () {
                         username=nameController.text;
                         password=passwordController.text;
@@ -106,6 +119,8 @@ class LoginPage extends StatelessWidget {
                           print('Please enter password !');
                         }
                         else {
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(
+                              builder: (BuildContext context) => Dashboard()));
                           print(username);
                           print(password);
                         }
